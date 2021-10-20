@@ -20,4 +20,16 @@ h1, h2, h3 {
 		 color: #ccf;
 	}
 }
-
+footer {
+        padding: 10px 0;
+}
+#menu li {
+        display: inline;
+        padding: 14px 16px 14px 0;
+}
+#menu ul {
+	padding: 0px;
+}
+#post-list {
+	list-style-type: none;
+}

@@ -32,11 +32,11 @@
   </header>
   <footer class="post-info">
     <time class="published" datetime="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
+      written on {{ article.locale_date }}
     </time>
     {% if article.modified %}
     <time class="modified" datetime="{{ article.modified.isoformat() }}">
-      {{ article.locale_modified }}
+      edited on {{ article.locale_modified }}
     </time>
     {% endif %}
     {% if article.authors %}
@@ -48,20 +48,20 @@
     {% endif %}
     {% if article.category %}
     <div class="category">
-        Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+        category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
     </div>
     {% endif %}
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+   {{ article.content }}
     {% if article.tags %}
     <div class="tags">
-        Tags:
+        tags:
         {% for tag in article.tags %}
             <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
         {% endfor %}
     </div>
     {% endif %}
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    {{ article.content }}
   </div><!-- /.entry-content -->
 </section>
 {% endblock %}

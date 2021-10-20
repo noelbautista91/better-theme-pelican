@@ -36,10 +36,12 @@
 </head>
 
 <body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
-        </header><!-- /#banner -->
+        <!-- <header id="banner" class="body">
+                <a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
+	</header> /#banner --> 
         <nav id="menu"><ul>
+			<!-- title <li><a href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></li> -->
+            <li><a href="{{ SITEURL }}/">home</a></li>
         {% for title, link in MENUITEMS %}
             <li><a href="{{ link }}">{{ title }}</a></li>
         {% endfor %}
