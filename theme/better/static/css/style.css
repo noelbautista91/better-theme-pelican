@@ -1,17 +1,31 @@
+pre, code {
+    font-family: Hack, monospace;
+    background-color: black;
+}
+pre {
+    padding: 10px;
+}
 body {
 	 max-width: 650px;
 	 margin: 40px auto;
 	 padding: 0 10px;
-	 font: 1.15rem -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+   font-size: 1.15rem;
+   font-family: -apple-system, BlinkMacSystemFont,
+                "Segoe UI", "Roboto", "Oxygen",
+                "Ubuntu", "Cantarell", "Fira Sans",
+                "Droid Sans", "Helvetica Neue", sans-serif;
 	 color: #454545;
 }
-h1, h2, h3 {
-	 line-height: 1.2;
+h1, h2, h3, h4 {
+    font-family: ui-serif;
+}
+#entry-title {
+    padding: 0;
 }
 @media (prefers-color-scheme: dark) {
 	 body {
 		 color: #ccc;
-		 background: black;
+		 background: #212529;
 	}
 	 a:link {
 		 color: #5bf;
@@ -20,8 +34,17 @@ h1, h2, h3 {
 		 color: #ccf;
 	}
 }
-footer {
-        padding: 10px 0;
+@media (prefers-color-scheme: light) {
+	  body {
+		    color: #ccc;
+		    background: #f8f9fa;
+	  }
+	  a:link {
+		    color: #5bf;
+	  }
+	  a:visited {
+		    color: #ccf;
+	  }
 }
 #menu li {
         display: inline;
