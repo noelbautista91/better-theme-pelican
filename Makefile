@@ -1,12 +1,12 @@
-PY?=python3
-PELICAN?=pelican
-PELICANOPTS=
-
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+PY?=$(BASEDIR)/env/bin/python3
+PELICAN?=$(BASEDIR)/env/bin/pelican
+PELICANOPTS=
+
 
 
 DEBUG ?= 0
@@ -69,4 +69,4 @@ publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 
 
-.PHONY: html help clean regenerate serve serve-global devserver publish 
+.PHONY: html help clean regenerate serve serve-global devserver publish
