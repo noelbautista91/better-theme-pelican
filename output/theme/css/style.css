@@ -27,23 +27,11 @@ h1, h2, h3, h4 {
 		 color: #ccc;
 		 background: #212529;
 	}
-	 a:link {
-		 color: #5bf;
-	}
-	 a:visited {
-		 color: #ccf;
-	}
 }
 @media (prefers-color-scheme: light) {
 	  body {
 		    color: #212529;
 		    background: #f8f9fa;
-	  }
-	  a:link {
-		    color: #5bf;
-	  }
-	  a:visited {
-		    color: #ccf;
 	  }
 }
 #menu li {
