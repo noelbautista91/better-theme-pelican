@@ -36,7 +36,7 @@ h1, h2, h3, h4 {
 }
 @media (prefers-color-scheme: light) {
 	  body {
-		    color: #ccc;
+		    color: #212529;
 		    background: #f8f9fa;
 	  }
 	  a:link {
