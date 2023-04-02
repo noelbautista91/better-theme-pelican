@@ -8,13 +8,18 @@ body {
                 "Ubuntu", "Cantarell", "Fira Sans",
                 "Droid Sans", "Helvetica Neue", sans-serif;
 }
-pre, code {
-	font-family:"Courier New", Courier, monospace;
-	font-size: 0.85rem;
-	overflow-x: scroll;
+pre > code {
+	padding: 0;
 }
 pre {
 	padding: 10px;
+	overflow-x: scroll;
+}
+code {
+	line-height: normal;
+	padding: 0.33em;
+	font-family: "Courier New",Courier,monospace;
+	font-size: .85rem;
 }
 span .caption {
 	font-style: italic;
@@ -67,10 +72,11 @@ h1, h2, h3, h4 {
         padding: 14px 16px 14px 0;
 }
 #menu ul {
-	padding: 0px;
+	padding: 0;
 }
 #post-list {
 	list-style-type: none;
+	padding: 0;
 }
 
 @media only screen and (min-width: 768px) {
