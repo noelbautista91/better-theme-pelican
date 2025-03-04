@@ -1,23 +1,61 @@
 {% extends "base.html" %}
+{% block meta %}
+<meta property="og:title" content="{% block title %}{{ SITENAME }}{% endblock title %}" />
+<meta property="og:description" content="{{ SITEDESCRIPTION }}" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}" />
+<meta property="og:image" content="{{ SITEURL }}{{ SITEPHOTO }}" />
+{% endblock %}
 {% block content %}
 <section id="content">
-{% block content_title %}
+{% block s %}
 {% endblock %}
 
 <ul id="post-list">
 {% for article in articles_page.object_list %}
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-                    <address class="vcard author">By
-                    {% for author in article.authors %}
-                        <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                    {% endfor %}
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-        </article></li>
+        <li>
+            <header>
+                <h2 class="entry-title">
+                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+                </h2>
+                <div class="post-info">
+                    {% if article.authors %}
+                        {% if article.category %}
+                            <address class="vcard author">
+                            {% for author in article.authors %}
+                            <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                            in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                            {% endfor %}
+                            </address>
+                        {% else %}
+                            <div class="category">
+                            {% for author in article.authors %}
+                            <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    <span class="time-container">
+                        <time class="published" datetime="{{ article.date.isoformat() }}">
+                            &middot; {{ article.locale_date }}
+                        </time>
+                        <br>
+                        {% if article.modified %}
+                        <time class="modified" datetime="{{ article.modified.isoformat() }}">
+                            | Edited {{ article.locale_modified }}
+                        </time>
+                        {% endif %}
+                    </span>
+                </div><!-- /.post-info -->
+            </header>
+            {% if article.featured_image %}
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                    <img src="{{ SITEURL}}{{ article.featured_image }}" id="hero">
+                </a>
+            {% endif %}
+            <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
+        </li>
 {% endfor %}
 </ul><!-- /#posts-list -->
 {% if articles_page.has_other_pages() %}

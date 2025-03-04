@@ -1,13 +1,23 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('poppins-regular.woff2') format('woff2'),
+		 url('poppins-regular.woff') format('woff'),
+		 url('poppins-regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
 body {
 	max-width: 650px;
 	margin: 40px auto;
 	padding: 0 10px;
 	line-height: 1.5em;
-	font-family: -apple-system, BlinkMacSystemFont,
-                "Segoe UI", "Roboto", "Oxygen",
-                "Ubuntu", "Cantarell", "Fira Sans",
-                "Droid Sans", "Helvetica Neue", sans-serif;
+	font-family: "Poppins", BlinkMacSystemFont,
+                 "Segoe UI", "Roboto", "Oxygen",
+                 "Ubuntu", "Cantarell", "Fira Sans",
+                 "Droid Sans", "Helvetica Neue", sans-serif;
 }
+
 pre > code {
 	padding: 0;
 }
@@ -30,9 +40,10 @@ img {
 	margin-right: auto;
 	width: 75%;
 }
+
 h1, h2, h3, h4 {
-    font-family: ui-serif;
 }
+
 #entry-title {
     padding: 0;
 }
@@ -70,6 +81,10 @@ h1, h2, h3, h4 {
 ul {
 	  line-height: 1.75rem;
 }
+ul .post-info {
+	line-height: 1.50rem;
+}
+
 #menu li {
         display: inline;
         padding: 14px 16px 14px 0;
