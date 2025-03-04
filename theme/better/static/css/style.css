@@ -167,9 +167,9 @@ blockquote {
 }
 
 .grid {
-	display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+	/* display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 1rem; */
 }
 
 .time-container {
@@ -182,4 +182,8 @@ blockquote {
 
 address.vcard.author {
 	font-size: small;
+}
+
+section#content {
+	padding: 3px 0 0 0;
 }
